@@ -1,0 +1,32 @@
+{
+  "name": "eulaw",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://ddcreationstudios.github.io/eulaw",
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-scripts-ts": "2.14.0",
+    "recharts": "^1.0.0-beta.10",
+    "styled-components": "^3.2.5"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.1",
+    "@types/react": "^16.1.0",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-test-renderer": "^16.0.1",
+    "@types/recharts": "^1.0.18",
+    "react-test-renderer": "^16.3.0",
+    "typescript": "^2.8.1"
+  }
+}
