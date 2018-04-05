@@ -26,7 +26,7 @@ class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentUser: 'Daniel'
+      currentUser: 'Member of the Union'
     };
   }
   render(): JSX.Element {
