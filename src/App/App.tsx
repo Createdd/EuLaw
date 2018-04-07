@@ -5,6 +5,7 @@ import { AppStyle, HeaderStyle } from './styles';
 
 import Chart, { ChartDataType } from '../Chart';
 import TextField from '../TextField';
+import DecisionResults from '../DecisionResults';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
@@ -16,6 +17,8 @@ const data: ChartDataType = [
   { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
 ];
+
+const results = '1000';
 
 /* tslint:disable no-any */
 class App extends React.Component<any, AppStateType> {
@@ -34,6 +37,7 @@ class App extends React.Component<any, AppStateType> {
         </HeaderStyle>
         <h2>{this.state.currentUser}</h2>
         <TextField />
+        <DecisionResults results={results}/>
         <Chart data={data} />
       </AppStyle>
     );

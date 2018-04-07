@@ -2,26 +2,45 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="sc-bdVaJa cgEgPp"
+  className="sc-bdVaJa dukJkZ"
 >
   <header
-    className="sc-bwzfXH gXRUvk"
+    className="sc-bwzfXH kJcZVs"
   >
     <img
       alt="logo"
-      className="App-logo"
       src="logo.svg"
     />
-    <h1
-      className="App-title"
-    >
-      Welcome to React
+    <h1>
+      Welcome to EU Fundamentals Crunch
     </h1>
   </header>
   <h2>
-    Welcome 
-    Daniel
+    Paste Jurisdiction here
   </h2>
+  <form
+    className="sc-bxivhb jsuVEO"
+    onSubmit={[Function]}
+  >
+    <textarea
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Press ENTER to send!"
+      value=""
+    />
+  </form>
+  <form>
+    <label>
+      <input
+        checked={true}
+        disabled={true}
+        name="isMemberState"
+        onChange={[Function]}
+        type="checkbox"
+      />
+    </label>
+    is a member state
+  </form>
   <div
     className="sc-htpNat gcoSfS"
   >
