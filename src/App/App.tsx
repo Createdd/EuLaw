@@ -1,5 +1,4 @@
 import * as React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
@@ -23,22 +22,20 @@ class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentUser: 'Member of the Union'
+      currentUser: 'Paste Jurisdiction here'
     };
   }
   render(): JSX.Element {
     return (
-      <MuiThemeProvider>
-        <AppStyle>
-          <HeaderStyle>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </HeaderStyle>
-          <h2>Welcome {this.state.currentUser}</h2>
-          <TextField />
-          <Chart data={data} />
-        </AppStyle>
-      </MuiThemeProvider>
+      <AppStyle>
+        <HeaderStyle>
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </HeaderStyle>
+        <h2>{this.state.currentUser}</h2>
+        <TextField />
+        <Chart data={data} />
+      </AppStyle>
     );
   }
 }

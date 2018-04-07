@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import TextFieldMaterial from 'material-ui/TextField';
 
-const StyledTextField = styled(TextFieldMaterial)`
+const StyledForm = styled.form`
   color: blue;
-  background-color: lightyellow;
-  border: 3px solid blue;
+  /* background-color: lightyellow;*/
+  > textarea {
+    width: 20rem;
+    height: 20rem;
+    border: 3px solid blue;
+  }
 `;
 
-export {StyledTextField};
+export { StyledForm };
