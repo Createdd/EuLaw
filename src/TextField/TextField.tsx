@@ -13,16 +13,13 @@ class TextField extends React.Component<any, TextFieldStateType> {
     this.state = {
       value: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event: { target: any }) {
+  handleChange = (event: { target: any }) => {
     this.setState({ value: event.target.value });
   }
 
-  handleSubmit(event: any) {
+  handleSubmit = (event: any) => {
     alert('submitted: ' + this.state.value);
     event.preventDefault();
   }
