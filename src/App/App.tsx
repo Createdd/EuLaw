@@ -29,8 +29,8 @@ class App extends React.Component<any, AppStateType> {
     return (
       <AppStyle>
         <HeaderStyle>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={logo} alt="logo" />
+          <h1>Welcome to EU Fundamentals Crunch</h1>
         </HeaderStyle>
         <h2>{this.state.currentUser}</h2>
         <TextField />
