@@ -1,14 +1,11 @@
 import * as React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { AppStateType } from './types';
-import {
-  AppStyle,
-  HeaderStyle
-} from './styles';
+import { AppStyle, HeaderStyle } from './styles';
 
-import Chart, {
-  ChartDataType,
-} from '../Chart';
+import Chart, { ChartDataType } from '../Chart';
+import TextField from '../TextField';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
@@ -31,16 +28,19 @@ class App extends React.Component<any, AppStateType> {
   }
   render(): JSX.Element {
     return (
-      <AppStyle>
-        <HeaderStyle>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </HeaderStyle>
-        <h2>Welcome {this.state.currentUser}</h2>
-        <Chart data={data}/>
-      </AppStyle>
+      <MuiThemeProvider>
+        <AppStyle>
+          <HeaderStyle>
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Welcome to React</h1>
+          </HeaderStyle>
+          <h2>Welcome {this.state.currentUser}</h2>
+          <TextField />
+          <Chart data={data} />
+        </AppStyle>
+      </MuiThemeProvider>
     );
   }
 }
 
-export {App};
+export { App };

@@ -4,7 +4,9 @@
   "private": true,
   "homepage": "https://createdd.github.io/EuLaw",
   "dependencies": {
+    "@types/material-ui": "^0.21.1",
     "gh-pages": "^1.1.0",
+    "material-ui": "^0.20.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-scripts-ts": "2.14.0",
