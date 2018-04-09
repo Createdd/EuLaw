@@ -3,6 +3,7 @@ import * as React from 'react';
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
 
+import ExampleCase from '../exampleData/exampleCase';
 import Chart, { ChartDataType } from '../Chart';
 import TextField from '../TextField';
 import DecisionResults from '../DecisionResults';
@@ -39,6 +40,8 @@ class App extends React.Component<any, AppStateType> {
         <TextField />
         <DecisionResults results={results}/>
         <Chart data={data} />
+        <h2>Example Case:</h2>
+        <p>{ExampleCase.text}</p>
       </AppStyle>
     );
   }
