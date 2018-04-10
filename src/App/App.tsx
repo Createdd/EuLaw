@@ -26,7 +26,7 @@ class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentUser: 'Paste Jurisdiction here'
+      currentUser: 'Paste example case here'
     };
   }
   render(): JSX.Element {
