@@ -17,7 +17,8 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "new-stateless-component": "node scripts/templates/statelessComponent"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
@@ -27,6 +28,8 @@
     "@types/react-test-renderer": "^16.0.1",
     "@types/recharts": "^1.0.18",
     "react-test-renderer": "^16.3.0",
-    "typescript": "^2.8.1"
+    "template-file": "^3.0.1",
+    "typescript": "^2.8.1",
+    "write": "^1.0.3"
   }
 }

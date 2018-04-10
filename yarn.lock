@@ -2267,7 +2267,7 @@ domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
-dot-prop@^4.1.0:
+dot-prop@^4.1.0, dot-prop@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   dependencies:
@@ -6909,6 +6909,16 @@ tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+template-file@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/template-file/-/template-file-3.0.1.tgz#cc56c0f670d06a65714f716b16d43774c0a8de0e"
+  dependencies:
+    dot-prop "^4.2.0"
+    glob "^7.1.1"
+    meow "^3.7.0"
+    p-limit "^1.1.0"
+    pify "^3.0.0"
+
 term-size@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
@@ -7622,6 +7632,12 @@ write-file-atomic@^2.0.0, write-file-atomic@^2.1.0:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
     signal-exit "^3.0.2"
+
+write@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/write/-/write-1.0.3.tgz#0800e14523b923a387e415123c865616aae0f5c3"
+  dependencies:
+    mkdirp "^0.5.1"
 
 ws@^4.0.0:
   version "4.1.0"
