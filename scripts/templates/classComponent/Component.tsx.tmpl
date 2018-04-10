@@ -1,0 +1,35 @@
+import * as React from 'react';
+
+import {
+    {{ name }}PropsType,
+    {{ name }}StateType,
+} from './types';
+import {{ name }}Styled from './styles';
+
+class {{ name }} : React.StatelessComponent<{{ name }}PropsType> = ( props : {{ name }}PropsType ) => (
+        <{{ name }}Styled>
+            {{ name }}
+        </{{ name }}Styled>
+);
+
+class DecisionResultsStep extends React.Component<
+  {{ name }}PropsType,
+  {{ name }}StateType,
+> {
+  constructor(props: {{ name }}PropsType,) {
+    super(props);
+    this.state = {
+      stateItem: true,
+    };
+  }
+
+  render() {
+    return (
+        <{{ name }}Styled>
+            {{ name }}
+        </{{ name }}Styled>
+    );
+  }
+}
+
+export { {{ name }} as default };
