@@ -1,9 +1,10 @@
 import * as React from 'react';
-// import { StyledForm } from './styles';
 
+// import { StyledForm } from './styles';
 import { DecisionResultsPropsType, DecisionResultsStateType } from './types';
 
-/* tslint:disable no-any */
+import DecisionResultsStep from './DecisionResultsStep';
+
 class DecisionResults extends React.Component<
   DecisionResultsPropsType,
   DecisionResultsStateType
@@ -16,6 +17,7 @@ class DecisionResults extends React.Component<
     };
   }
 
+  /* tslint:disable no-any */
   handleInputChange = (event: any) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -29,16 +31,7 @@ class DecisionResults extends React.Component<
   render() {
     return (
       <form>
-        <label>
-          <input
-            name="isMemberState"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange}
-            disabled={true}
-          />
-        </label>
-        is a member state
+        <DecisionResultsStep/>
       </form>
     );
   }

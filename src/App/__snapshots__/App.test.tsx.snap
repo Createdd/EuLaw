@@ -16,7 +16,7 @@ exports[`renders the component 1`] = `
     </h1>
   </header>
   <h2>
-    Paste Jurisdiction here
+    Paste example case here
   </h2>
   <form
     className="sc-bxivhb jsuVEO"
@@ -30,16 +30,20 @@ exports[`renders the component 1`] = `
     />
   </form>
   <form>
-    <label>
-      <input
-        checked={true}
-        disabled={true}
-        name="isMemberState"
-        onChange={[Function]}
-        type="checkbox"
-      />
-    </label>
-    is a member state
+    <div
+      className="sc-ifAKCX jtdfU"
+    >
+      <label>
+        <input
+          checked={true}
+          disabled={true}
+          name="isMemberState"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        is a member state
+      </label>
+    </div>
   </form>
   <div
     className="sc-htpNat gcoSfS"
@@ -862,5 +866,11 @@ exports[`renders the component 1`] = `
       </div>
     </div>
   </div>
+  <h2>
+    Example Case:
+  </h2>
+  <p>
+    Suppose that the Austrian government has heard about problematic forms of feeding ("fattening") geese in Member State Germany. Such geese are forcefully fed with excessive amounts of feedstuffs, which leads to the multiplication of their weight until the point of time of their slaughter. Suppose furthermore that such forms of feeding are prohibited in Austria and that no relevant EU secondary law exists which regulates such feeding methods. The Austrian government considers, against this background to implement an import ban for any geese from Germany, since it cannot be ruled out with certainty that the consumption of such fattened geese is dangerous to human health, even though such risk is highly unlikely. Will such a regulatory project comply with the fundamental freedoms of EU law?
+  </p>
 </div>
 `;

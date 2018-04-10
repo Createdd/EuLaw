@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test DecisionResultsStep renders snapshot 1`] = `
+<div
+  className="sc-bdVaJa eAwGjB"
+>
+  <label>
+    <input
+      checked={true}
+      disabled={true}
+      name="isMemberState"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    is a member state
+  </label>
+</div>
+`;
