@@ -4,10 +4,10 @@ var nlp = require('compromise');
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
 
-import ExampleCase from '../exampleData/exampleCase';
-import Chart, { ChartDataType } from '../Chart';
-import TextField from '../TextField';
-import DecisionResults from '../DecisionResults';
+import ExampleCase from '../data/exampleData/exampleCase';
+import Chart, { ChartDataType } from '../components/Chart';
+import TextField from '../components/TextField';
+import DecisionResults from '../components/DecisionResults';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
