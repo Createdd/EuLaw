@@ -15,7 +15,7 @@ if( argv.help || argv.name === undefined ) {
     data = {
         name : argv.name || 'Component',
         nameLowercase : argv.name.toLowerCase() || 'component',
-        path : ( argv.path || './src/' ).replace(/\/?$/, '/'),
+        path : ( argv.path || './src/components/' ).replace(/\/?$/, '/'),
     };
 
     templates = [

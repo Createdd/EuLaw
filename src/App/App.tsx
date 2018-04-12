@@ -8,6 +8,7 @@ import ExampleCase from '../data/exampleData/exampleCase';
 import Chart, { ChartDataType } from '../components/Chart';
 import TextField from '../components/TextField';
 import DecisionResults from '../components/DecisionResults';
+import TextAnalytics from '../components/TextAnalytics';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
@@ -23,7 +24,7 @@ const data: ChartDataType = [
 const results = '1000';
 
 const doc = nlp(ExampleCase.text);
-console.log(doc.topics().slice(0, 50).out('frequency'));
+console.log(doc.topics().slice(0, 4).out('frequency'));
 
 /* tslint:disable no-any */
 class App extends React.Component<any, AppStateType> {
@@ -42,6 +43,7 @@ class App extends React.Component<any, AppStateType> {
         </HeaderStyle>
         <h2>{this.state.currentUser}</h2>
         <TextField />
+        <TextAnalytics />
         <h2>Example Case:</h2>
         <p>{ExampleCase.text}</p>
         <DecisionResults results={results} />

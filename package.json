@@ -19,7 +19,8 @@
     "eject": "react-scripts-ts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "new-stateless-component": "node scripts/templates/statelessComponent"
+    "new-stateless-component": "node scripts/templates/statelessComponent",
+    "new-class-component": "node scripts/templates/classComponent"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",

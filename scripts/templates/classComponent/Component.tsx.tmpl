@@ -6,17 +6,11 @@ import {
 } from './types';
 import {{ name }}Styled from './styles';
 
-class {{ name }} : React.StatelessComponent<{{ name }}PropsType> = ( props : {{ name }}PropsType ) => (
-        <{{ name }}Styled>
-            {{ name }}
-        </{{ name }}Styled>
-);
-
-class DecisionResultsStep extends React.Component<
+class {{ name }} extends React.Component<
   {{ name }}PropsType,
-  {{ name }}StateType,
+  {{ name }}StateType
 > {
-  constructor(props: {{ name }}PropsType,) {
+  constructor(props: {{ name }}PropsType) {
     super(props);
     this.state = {
       stateItem: true,
