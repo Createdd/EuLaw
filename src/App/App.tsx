@@ -41,7 +41,6 @@ class App extends React.Component<any, AppStateType> {
   }
 
   getValueHandler = (text: string) => {
-    console.error(text);
     this.setState({
       currentCase: text
     });
