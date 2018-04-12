@@ -32,7 +32,10 @@ exports[`renders the component 1`] = `
   <div
     className="sc-EHOje edRFCv"
   >
-    TextAnalytics
+    <p>
+      TextAnalytics
+    </p>
+    Paste example case here
   </div>
   <h2>
     Example Case:

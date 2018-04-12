@@ -54,9 +54,9 @@ class App extends React.Component<any, AppStateType> {
           <img src={logo} alt="logo" />
           <h1>Welcome to EU Fundamentals Crunch</h1>
         </HeaderStyle>
-        <h2>{this.state.currentCase}</h2>
+        <h2>Paste example case here</h2>
         <TextField getValue={this.getValueHandler} />
-        <TextAnalytics />
+        <TextAnalytics text={this.state.currentCase}/>
         <h2>Example Case:</h2>‚
         <p>{ExampleCase.text}</p>
         <DecisionResults results={results} />

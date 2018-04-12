@@ -4,6 +4,8 @@ exports[`Test TextAnalytics renders snapshot 1`] = `
 <div
   className="sc-bdVaJa eAwGjB"
 >
-  TextAnalytics
+  <p>
+    TextAnalytics
+  </p>
 </div>
 `;

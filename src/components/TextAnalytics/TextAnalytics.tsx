@@ -20,7 +20,8 @@ class TextAnalytics extends React.Component<
   render() {
     return (
         <TextAnalyticsStyled>
-            TextAnalytics
+            <p>TextAnalytics</p>
+            {this.props.text}
         </TextAnalyticsStyled>
     );
   }

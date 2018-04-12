@@ -1,5 +1,5 @@
 interface TextAnalyticsPropsType {
-    //
+    text: string;
 }
 
 interface TextAnalyticsStateType {
