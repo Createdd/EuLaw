@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { StyledForm } from './styles';
 
-import { TextFieldStateType } from './types';
+import {
+  TextFieldStateType,
+  TextFieldPropsType,
+} from './types';
 
 const placeholder = 'Press ENTER to send!';
 
 /* tslint:disable no-any */
-class TextField extends React.Component<any, TextFieldStateType> {
-  constructor(props: any) {
+class TextField extends React.Component<TextFieldPropsType, TextFieldStateType> {
+  constructor(props: TextFieldPropsType) {
     super(props);
 
     this.state = {
@@ -20,7 +23,7 @@ class TextField extends React.Component<any, TextFieldStateType> {
   }
 
   handleSubmit = (event: any) => {
-    alert('submitted: ' + this.state.value);
+    this.props.getValue(this.state.value);
     event.preventDefault();
   }
 

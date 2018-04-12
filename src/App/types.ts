@@ -1,5 +1,5 @@
 interface AppStateType {
-  currentUser: string;
+  currentCase: string;
 }
 
 export {

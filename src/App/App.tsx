@@ -24,16 +24,29 @@ const data: ChartDataType = [
 const results = '1000';
 
 const doc = nlp(ExampleCase.text);
-console.log(doc.topics().slice(0, 4).out('frequency'));
+console.log(
+  doc
+    .topics()
+    .slice(0, 4)
+    .out('frequency')
+);
 
 /* tslint:disable no-any */
 class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentUser: 'Paste example case here'
+      currentCase: 'Paste example case here'
     };
   }
+
+  getValueHandler = (text: string) => {
+    console.error(text);
+    this.setState({
+      currentCase: text
+    });
+  }
+
   render(): JSX.Element {
     return (
       <AppStyle>
@@ -41,10 +54,10 @@ class App extends React.Component<any, AppStateType> {
           <img src={logo} alt="logo" />
           <h1>Welcome to EU Fundamentals Crunch</h1>
         </HeaderStyle>
-        <h2>{this.state.currentUser}</h2>
-        <TextField />
+        <h2>{this.state.currentCase}</h2>
+        <TextField getValue={this.getValueHandler} />
         <TextAnalytics />
-        <h2>Example Case:</h2>
+        <h2>Example Case:</h2>‚
         <p>{ExampleCase.text}</p>
         <DecisionResults results={results} />
         <Chart data={data} />
