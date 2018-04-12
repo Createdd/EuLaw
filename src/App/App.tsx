@@ -1,4 +1,5 @@
 import * as React from 'react';
+var nlp = require('compromise');
 
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
@@ -21,6 +22,9 @@ const data: ChartDataType = [
 
 const results = '1000';
 
+const doc = nlp(ExampleCase.text);
+console.log(doc.topics().slice(0, 50).out('frequency'));
+
 /* tslint:disable no-any */
 class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
@@ -38,10 +42,10 @@ class App extends React.Component<any, AppStateType> {
         </HeaderStyle>
         <h2>{this.state.currentUser}</h2>
         <TextField />
-        <DecisionResults results={results}/>
-        <Chart data={data} />
         <h2>Example Case:</h2>
         <p>{ExampleCase.text}</p>
+        <DecisionResults results={results} />
+        <Chart data={data} />
       </AppStyle>
     );
   }
