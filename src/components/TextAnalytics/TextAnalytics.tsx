@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { intersection as _intersection } from 'lodash';
+import { intersection as _intersection, isEqual as _isEqual } from 'lodash';
 var nlp = require('compromise');
 
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
-import ExampleCase from '../../data/exampleData/exampleCase';
+// import ExampleCase from '../../data/exampleData/exampleCase';
 import MemberStates from '../../data/exampleData/memberStates';
 
 class TextAnalytics extends React.Component<
@@ -24,13 +24,13 @@ class TextAnalytics extends React.Component<
     this.calculateResults();
   }
 
-  resultsHandler = (res: string[]) => {
+  resultsHandler = (res: TextAnalyticsStateType) => {
     this.props.results(res);
   }
 
   calculateResults = () => {
-    // const doc = nlp(this.props.text); //TODO: Use input instead of example
-    const text = nlp(ExampleCase.text);
+    const text = nlp(this.props.text); // TODO: Use input instead of example
+    // const text = nlp(ExampleCase.text);
     const topics = text
       .topics()
       .slice(0, 4)
@@ -43,20 +43,28 @@ class TextAnalytics extends React.Component<
       .out('frequency')
       .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
-    this.setState({
-      topics,
-      places
-    });
+    if (!_isEqual(this.state, { topics, places })) {
+      this.setState({
+        topics,
+        places
+      });
+    }
 
     const intersect = _intersection(
       MemberStates.map((str: string) => str.toLowerCase()),
       places
     );
 
-    this.resultsHandler(intersect);
+    const newRes = {
+      topics: [],
+      places: intersect
+    };
+
+    this.resultsHandler(newRes);
   }
 
   renderResults = () => {
+    this.calculateResults();
     return (
       <ul>
         <li>

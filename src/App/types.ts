@@ -1,8 +1,8 @@
+import { TextAnalyticsStateType } from '../components/TextAnalytics';
+
 interface AppStateType {
   currentCase: string;
-  results: string[];
+  results: TextAnalyticsStateType;
 }
 
-export {
-  AppStateType,
-};
+export { AppStateType };

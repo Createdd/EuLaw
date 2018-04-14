@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { difference as _difference } from 'lodash';
+import { isEqual as _isEqual } from 'lodash';
 
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
@@ -8,7 +8,7 @@ import ExampleCase from '../data/exampleData/exampleCase';
 import Chart, { ChartDataType } from '../components/Chart';
 import TextField from '../components/TextField';
 import DecisionResults from '../components/DecisionResults';
-import TextAnalytics from '../components/TextAnalytics';
+import TextAnalytics, { TextAnalyticsStateType } from '../components/TextAnalytics';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
@@ -29,7 +29,10 @@ class App extends React.Component<any, AppStateType> {
     super(props);
     this.state = {
       currentCase: 'Paste example case here',
-      results: []
+      results: {
+        topics: [],
+        places: []
+      }
     };
   }
 
@@ -39,8 +42,8 @@ class App extends React.Component<any, AppStateType> {
     });
   }
 
-  resultsHandler = (res: string[]) => {
-    if ( _difference(res, this.state.results).length > 0) {
+  resultsHandler = (res: TextAnalyticsStateType) => {
+    if ( !_isEqual(res, this.state.results)) {
       this.setState({
         results: res
       });

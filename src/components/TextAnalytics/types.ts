@@ -1,6 +1,6 @@
 interface TextAnalyticsPropsType {
     text: string;
-    results: (text: any) => void;
+    results: (res: TextAnalyticsStateType) => void;
 }
 
 interface TextAnalyticsStateType {
