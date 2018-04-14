@@ -5,12 +5,13 @@ import TextAnalytics from './TextAnalytics';
 
 const testText = 'test';
 
-describe( 'Test TextAnalytics', () => {
-    it( 'renders snapshot', () => {
-        const tree = renderer.create(
-            <TextAnalytics text={testText} />
-        ).toJSON();
+/* tslint:disable no-empty */
+describe('Test TextAnalytics', () => {
+  it('renders snapshot', () => {
+    const tree = renderer
+      .create(<TextAnalytics text={testText} results={() => {}} />)
+      .toJSON();
 
-        expect( tree ).toMatchSnapshot();
-    } );
-} );
+    expect(tree).toMatchSnapshot();
+  });
+});

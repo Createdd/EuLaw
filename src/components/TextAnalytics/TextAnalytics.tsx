@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { intersection as _intersection } from 'lodash';
 var nlp = require('compromise');
 
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
 import ExampleCase from '../../data/exampleData/exampleCase';
+import MemberStates from '../../data/exampleData/memberStates';
 
 class TextAnalytics extends React.Component<
   TextAnalyticsPropsType,
@@ -13,38 +15,57 @@ class TextAnalytics extends React.Component<
   constructor(props: TextAnalyticsPropsType) {
     super(props);
     this.state = {
-      stateItem: true
+      topics: [],
+      places: []
     };
   }
 
-  renderTopics = () => {
-    // const doc = nlp(this.props.text);
+  componentDidMount() {
+    this.calculateResults();
+  }
+
+  resultsHandler = (res: string[]) => {
+    this.props.results(res);
+  }
+
+  calculateResults = () => {
+    // const doc = nlp(this.props.text); //TODO: Use input instead of example
     const text = nlp(ExampleCase.text);
     const topics = text
       .topics()
       .slice(0, 4)
-      .out('frequency');
+      .out('frequency')
+      .map((top: { normal: string }) => top.normal.toLowerCase());
     const places = text
       .nouns()
       .places()
       .slice(0, 4)
-      .out('frequency');
+      .out('frequency')
+      .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
-    console.log(places);
+    this.setState({
+      topics,
+      places
+    });
 
+    const intersect = _intersection(
+      MemberStates.map((str: string) => str.toLowerCase()),
+      places
+    );
+
+    this.resultsHandler(intersect);
+  }
+
+  renderResults = () => {
     return (
       <ul>
         <li>
           Topics:
-          {topics.map(
-            (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
-          )}
+          {this.state.topics.map((top: string) => `${top.toUpperCase()}, `)}
         </li>
         <li>
           States:
-          {places.map(
-            (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
-          )}
+          {this.state.places.map((pl: string) => `${pl.toUpperCase()}, `)}
         </li>
       </ul>
     );
@@ -54,7 +75,7 @@ class TextAnalytics extends React.Component<
     return (
       <TextAnalyticsStyled>
         <p>TextAnalytics</p>
-        {this.renderTopics()}
+        {this.renderResults()}
       </TextAnalyticsStyled>
     );
   }

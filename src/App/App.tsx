@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { difference as _difference } from 'lodash';
 
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
@@ -27,7 +28,8 @@ class App extends React.Component<any, AppStateType> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentCase: 'Paste example case here'
+      currentCase: 'Paste example case here',
+      results: []
     };
   }
 
@@ -35,6 +37,14 @@ class App extends React.Component<any, AppStateType> {
     this.setState({
       currentCase: text
     });
+  }
+
+  resultsHandler = (res: string[]) => {
+    if ( _difference(res, this.state.results).length > 0) {
+      this.setState({
+        results: res
+      });
+    }
   }
 
   render(): JSX.Element {
@@ -46,7 +56,10 @@ class App extends React.Component<any, AppStateType> {
         </HeaderStyle>
         <h2>Paste example case here</h2>
         <TextField getValue={this.getValueHandler} />
-        <TextAnalytics text={this.state.currentCase}/>
+        <TextAnalytics
+          text={this.state.currentCase}
+          results={this.resultsHandler}
+        />
         <h2>Example Case:</h2>
         <p>{ExampleCase.text}</p>
         <DecisionResults results={results} />
