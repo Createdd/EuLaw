@@ -7,5 +7,6 @@ exports[`Test TextAnalytics renders snapshot 1`] = `
   <p>
     TextAnalytics
   </p>
+  test
 </div>
 `;
