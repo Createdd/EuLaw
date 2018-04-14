@@ -1,9 +1,7 @@
 import * as React from 'react';
+var nlp = require('compromise');
 
-import {
-    TextAnalyticsPropsType,
-    TextAnalyticsStateType,
-} from './types';
+import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
 class TextAnalytics extends React.Component<
@@ -13,16 +11,33 @@ class TextAnalytics extends React.Component<
   constructor(props: TextAnalyticsPropsType) {
     super(props);
     this.state = {
-      stateItem: true,
+      stateItem: true
     };
+  }
+
+  renderTopics = () => {
+    const doc = nlp(this.props.text);
+    const topics = doc
+      .topics()
+      .slice(0, 4)
+      .out('frequency');
+
+    return (
+      <p>
+        Topics (according to word importance):
+        {topics.map(
+          (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
+        )}
+      </p>
+    );
   }
 
   render() {
     return (
-        <TextAnalyticsStyled>
-            <p>TextAnalytics</p>
-            {this.props.text}
-        </TextAnalyticsStyled>
+      <TextAnalyticsStyled>
+        <p>TextAnalytics</p>
+        {this.renderTopics()}
+      </TextAnalyticsStyled>
     );
   }
 }

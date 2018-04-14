@@ -1,5 +1,4 @@
 import * as React from 'react';
-var nlp = require('compromise');
 
 import { AppStateType } from './types';
 import { AppStyle, HeaderStyle } from './styles';
@@ -22,14 +21,6 @@ const data: ChartDataType = [
 ];
 
 const results = '1000';
-
-const doc = nlp(ExampleCase.text);
-console.log(
-  doc
-    .topics()
-    .slice(0, 4)
-    .out('frequency')
-);
 
 /* tslint:disable no-any */
 class App extends React.Component<any, AppStateType> {
@@ -56,7 +47,7 @@ class App extends React.Component<any, AppStateType> {
         <h2>Paste example case here</h2>
         <TextField getValue={this.getValueHandler} />
         <TextAnalytics text={this.state.currentCase}/>
-        <h2>Example Case:</h2>‚
+        <h2>Example Case:</h2>
         <p>{ExampleCase.text}</p>
         <DecisionResults results={results} />
         <Chart data={data} />
