@@ -35,9 +35,20 @@ exports[`renders the component 1`] = `
     <p>
       TextAnalytics
     </p>
-    <p>
-      Topics (according to word importance):
-    </p>
+    <ul>
+      <li>
+        Topics:
+        EU, 
+        AUSTRIA, 
+        GERMANY, 
+        AUSTRIAN GOVERNMENT, 
+      </li>
+      <li>
+        States:
+        GERMANY, 
+        AUSTRIA, 
+      </li>
+    </ul>
   </div>
   <h2>
     Example Case:

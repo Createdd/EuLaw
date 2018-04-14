@@ -4,6 +4,8 @@ var nlp = require('compromise');
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
+import ExampleCase from '../../data/exampleData/exampleCase';
+
 class TextAnalytics extends React.Component<
   TextAnalyticsPropsType,
   TextAnalyticsStateType
@@ -16,19 +18,35 @@ class TextAnalytics extends React.Component<
   }
 
   renderTopics = () => {
-    const doc = nlp(this.props.text);
-    const topics = doc
+    // const doc = nlp(this.props.text);
+    const text = nlp(ExampleCase.text);
+    const topics = text
       .topics()
       .slice(0, 4)
       .out('frequency');
+    const places = text
+      .nouns()
+      .places()
+      .slice(0, 4)
+      .out('frequency');
+
+    console.log(places);
 
     return (
-      <p>
-        Topics (according to word importance):
-        {topics.map(
-          (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
-        )}
-      </p>
+      <ul>
+        <li>
+          Topics:
+          {topics.map(
+            (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
+          )}
+        </li>
+        <li>
+          States:
+          {places.map(
+            (topic: { normal: string }) => `${topic.normal.toUpperCase()}, `
+          )}
+        </li>
+      </ul>
     );
   }
 
