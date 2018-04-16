@@ -23,9 +23,8 @@ const data: ChartDataType = [
 
 const results = '1000';
 
-/* tslint:disable no-any */
-class App extends React.Component<any, AppStateType> {
-  constructor(props: any) {
+class App extends React.Component<{}, AppStateType> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       currentCase: 'Paste example case here',

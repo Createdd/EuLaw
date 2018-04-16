@@ -5,7 +5,7 @@ var nlp = require('compromise');
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
-// import ExampleCase from '../../data/exampleData/exampleCase';
+import ExampleCase from '../../data/exampleData/exampleCase';
 import MemberStates from '../../data/exampleData/memberStates';
 
 class TextAnalytics extends React.Component<
@@ -29,8 +29,8 @@ class TextAnalytics extends React.Component<
   }
 
   calculateResults = () => {
-    const text = nlp(this.props.text); // TODO: Use input instead of example
-    // const text = nlp(ExampleCase.text);
+    // const text = nlp(this.props.text); // TODO: Use input instead of example
+    const text = nlp(ExampleCase.text);
     const topics = text
       .topics()
       .slice(0, 4)
