@@ -13,30 +13,29 @@ class DecisionResultsStep extends React.Component<
   constructor(props: DecisionResultsStepPropsType) {
     super(props);
     this.state = {
-      isGoing: true,
-      numberOfGuests: 2
+      checked: false
     };
   }
 
-  /* tslint:disable no-any */
-  handleInputChange = (event: any) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+  // copied from React Docs
+  handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
+    // const target = event.target as HTMLInputElement;
+    // const value = target.type === 'checkbox' ? target.checked : target.value;
+    // const name = target.name;
 
     this.setState({
-      [name]: value
+      checked: true
     });
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <DecisionResultsStepStyled>
         <label>
           <input
             name="isMemberState"
             type="checkbox"
-            checked={this.state.isGoing}
+            checked={this.state.checked}
             onChange={this.handleInputChange}
             disabled={true}
           />

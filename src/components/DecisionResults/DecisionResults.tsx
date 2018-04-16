@@ -12,14 +12,13 @@ class DecisionResults extends React.Component<
   constructor(props: DecisionResultsPropsType) {
     super(props);
     this.state = {
-      isGoing: true,
-      numberOfGuests: 2
+    
     };
   }
 
   /* tslint:disable no-any */
-  handleInputChange = (event: any) => {
-    const target = event.target;
+  handleInputChange = (event: React.FormEvent<EventTarget>): void => {
+    const target = event.target as HTMLInputElement;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
@@ -28,7 +27,7 @@ class DecisionResults extends React.Component<
     });
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <form>
         <DecisionResultsStep/>

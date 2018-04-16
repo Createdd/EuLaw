@@ -8,7 +8,9 @@ import ExampleCase from '../data/exampleData/exampleCase';
 import Chart, { ChartDataType } from '../components/Chart';
 import TextField from '../components/TextField';
 import DecisionResults from '../components/DecisionResults';
-import TextAnalytics, { TextAnalyticsStateType } from '../components/TextAnalytics';
+import TextAnalytics, {
+  TextAnalyticsStateType
+} from '../components/TextAnalytics';
 
 const logo = require('../logo.svg');
 const data: ChartDataType = [
@@ -35,14 +37,14 @@ class App extends React.Component<{}, AppStateType> {
     };
   }
 
-  getValueHandler = (text: string) => {
+  getValueHandler = (text: string): void => {
     this.setState({
       currentCase: text
     });
   }
 
-  resultsHandler = (res: TextAnalyticsStateType) => {
-    if ( !_isEqual(res, this.state.results)) {
+  resultsHandler = (res: TextAnalyticsStateType): void => {
+    if (!_isEqual(res, this.state.results)) {
       this.setState({
         results: res
       });

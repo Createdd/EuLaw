@@ -24,11 +24,11 @@ class TextAnalytics extends React.Component<
     this.calculateResults();
   }
 
-  resultsHandler = (res: TextAnalyticsStateType) => {
+  resultsHandler = (res: TextAnalyticsStateType): void => {
     this.props.results(res);
   }
 
-  calculateResults = () => {
+  calculateResults = (): void => {
     // const text = nlp(this.props.text); // TODO: Use input instead of example
     const text = nlp(ExampleCase.text);
     const topics = text
@@ -43,6 +43,7 @@ class TextAnalytics extends React.Component<
       .out('frequency')
       .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
+    // If a new text is supplied, update the state
     if (!_isEqual(this.state, { topics, places })) {
       this.setState({
         topics,
@@ -50,12 +51,11 @@ class TextAnalytics extends React.Component<
       });
     }
 
-    const intersect = _intersection(
+    const intersect: string[] = _intersection(
       MemberStates.map((str: string) => str.toLowerCase()),
       places
     );
-
-    const newRes = {
+    const newRes: TextAnalyticsStateType = {
       topics: [],
       places: intersect
     };
@@ -63,7 +63,7 @@ class TextAnalytics extends React.Component<
     this.resultsHandler(newRes);
   }
 
-  renderResults = () => {
+  renderResults = (): JSX.Element => {
     this.calculateResults();
     return (
       <ul>
@@ -79,7 +79,7 @@ class TextAnalytics extends React.Component<
     );
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <TextAnalyticsStyled>
         <p>TextAnalytics</p>

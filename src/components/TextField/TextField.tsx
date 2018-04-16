@@ -3,7 +3,7 @@ import { StyledForm } from './styles';
 
 import { TextFieldStateType, TextFieldPropsType } from './types';
 
-const placeholder = 'Press ENTER to send!';
+const placeholder: string = 'Press ENTER to send!';
 
 class TextField extends React.Component<
   TextFieldPropsType,
@@ -17,24 +17,24 @@ class TextField extends React.Component<
     };
   }
 
-  /* tslint:disable no-any */
-  handleChange = (event: { target: any }) => {
-    this.setState({ value: event.target.value });
+  handleChange = (event: React.FormEvent<EventTarget>): void => {
+    const target = event.target as HTMLInputElement;
+    this.setState({ value: target.value });
   }
 
-  handleSubmit = (event: any) => {
+  handleSubmit = (event: React.FormEvent<EventTarget>): void => {
     this.props.getValue(this.state.value);
     event.preventDefault();
   }
 
-  onEnterPress = (e: any) => {
+  onEnterPress = (e: React.KeyboardEvent<HTMLTextAreaElement>): void => {
     if (e.keyCode === 13 && e.shiftKey === false) {
       e.preventDefault();
       this.handleSubmit(e);
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <StyledForm onSubmit={this.handleSubmit}>
         <textarea

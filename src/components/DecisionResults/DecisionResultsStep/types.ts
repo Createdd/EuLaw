@@ -3,8 +3,7 @@ interface DecisionResultsStepPropsType {
 }
 
 interface DecisionResultsStepStateType {
-    isGoing: boolean;
-    numberOfGuests: number;
+    checked: boolean;
 }
 
 export {
