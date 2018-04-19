@@ -16,7 +16,6 @@ class DecisionResults extends React.Component<
     };
   }
 
-  /* tslint:disable no-any */
   handleInputChange = (event: React.FormEvent<EventTarget>): void => {
     const target = event.target as HTMLInputElement;
     const value = target.type === 'checkbox' ? target.checked : target.value;

@@ -6,7 +6,7 @@ exports[`Test DecisionResultsStep renders snapshot 1`] = `
 >
   <label>
     <input
-      checked={true}
+      checked={false}
       disabled={true}
       name="isMemberState"
       onChange={[Function]}

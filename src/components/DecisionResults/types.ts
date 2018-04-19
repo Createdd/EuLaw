@@ -1,5 +1,7 @@
+import { TextAnalyticsStateType } from '../TextAnalytics';
+
 interface DecisionResultsPropsType {
-  results: string;
+  results: TextAnalyticsStateType;
 }
 interface DecisionResultsStateType {
   //

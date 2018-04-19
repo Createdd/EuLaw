@@ -8,7 +8,7 @@ describe( 'Test DecisionResultsStep', () => {
         const tree = renderer.create(
             <DecisionResultsStep />
         ).toJSON();
-
+        
         expect( tree ).toMatchSnapshot();
     } );
 } );

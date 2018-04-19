@@ -23,8 +23,6 @@ const data: ChartDataType = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
 ];
 
-const results = '1000';
-
 class App extends React.Component<{}, AppStateType> {
   constructor(props: {}) {
     super(props);
@@ -64,9 +62,9 @@ class App extends React.Component<{}, AppStateType> {
           text={this.state.currentCase}
           results={this.resultsHandler}
         />
+        <DecisionResults results={this.state.results} />
         <h2>Example Case:</h2>
         <p>{ExampleCase.text}</p>
-        <DecisionResults results={results} />
         <Chart data={data} />
       </AppStyle>
     );

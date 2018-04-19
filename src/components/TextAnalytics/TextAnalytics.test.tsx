@@ -3,7 +3,7 @@ import * as renderer from 'react-test-renderer';
 
 import TextAnalytics from './TextAnalytics';
 
-const testText = 'test';
+const testText = 'testText';
 
 /* tslint:disable no-empty */
 describe('Test TextAnalytics', () => {
