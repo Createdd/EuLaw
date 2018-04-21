@@ -9,9 +9,11 @@ const StyledDecisionStepFail = styled.li`
 `;
 
 const StyledForm = styled.form`
-  color: blue;
   border: 0.1rem solid black;
-  list-style-position: inside;
+
+  ul {
+    list-style-type: none;
+  }
 `;
 
 export { StyledForm, StyledDecisionStepSuccess, StyledDecisionStepFail };

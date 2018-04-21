@@ -95,6 +95,7 @@ class DecisionResults extends React.Component<
   render(): JSX.Element {
     return (
       <StyledForm>
+        <h2>Decision Results</h2>
         {/* <DecisionResultsStep results={this.props.results} /> */}
         <ul>{this.renderMemberstate(this.props.results)}</ul>
       </StyledForm>
