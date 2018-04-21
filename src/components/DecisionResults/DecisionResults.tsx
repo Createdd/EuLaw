@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { intersection as _intersection } from 'lodash';
 
-import { StyledForm } from './styles';
+import {
+  StyledForm,
+  StyledDecisionStepSuccess,
+  StyledDecisionStepFail
+} from './styles';
 import { DecisionResultsPropsType, DecisionResultsStateType } from './types';
 
 import { TextAnalyticsStateType } from '../TextAnalytics';
@@ -63,21 +67,29 @@ class DecisionResults extends React.Component<
       );
       if (intersect.length > 1) {
         return (
-          <li>
-            <label>
-              Is a member state
-              <input
-                name="isMemberState"
-                type="checkbox"
-                checked={true}
-                disabled={true}
-              />
-            </label>
-          </li>
+          <StyledDecisionStepSuccess>
+            <label>Is a member state </label>
+            <input
+              name="isMemberState"
+              type="checkbox"
+              checked={true}
+              disabled={true}
+            />
+          </StyledDecisionStepSuccess>
         );
       }
     }
-    return <label>Is here a member state?</label>;
+    return (
+      <StyledDecisionStepFail>
+        <label>Is not a member state </label>
+        <input
+          name="isMemberState"
+          type="checkbox"
+          checked={false}
+          disabled={true}
+        />
+      </StyledDecisionStepFail>
+    );
   }
 
   render(): JSX.Element {
