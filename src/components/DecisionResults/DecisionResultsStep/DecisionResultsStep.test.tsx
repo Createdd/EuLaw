@@ -3,10 +3,15 @@ import * as renderer from 'react-test-renderer';
 
 import DecisionResultsStep from './DecisionResultsStep';
 
+const testResults = {
+    topics: ['test1', 'test2'],
+    places: ['test1', 'test2']
+  };
+
 describe( 'Test DecisionResultsStep', () => {
     it( 'renders snapshot', () => {
         const tree = renderer.create(
-            <DecisionResultsStep />
+            <DecisionResultsStep results={testResults}/>
         ).toJSON();
         
         expect( tree ).toMatchSnapshot();

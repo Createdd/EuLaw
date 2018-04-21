@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { intersection as _intersection, isEqual as _isEqual } from 'lodash';
+import { isEqual as _isEqual } from 'lodash';
 var nlp = require('compromise');
 
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
 import ExampleCase from '../../data/exampleData/exampleCase';
-import MemberStates from '../../data/exampleData/memberStates';
 
 class TextAnalytics extends React.Component<
   TextAnalyticsPropsType,
@@ -21,16 +20,15 @@ class TextAnalytics extends React.Component<
   }
 
   resultsHandler = (): void => {
-    const intersect: string[] = _intersection(
-      MemberStates.map((str: string) => str.toLowerCase()),
-      this.state.places
-    );
-    const newRes: TextAnalyticsStateType = {
-      topics: [],
-      places: intersect
-    };
+    // const intersect: string[] = _intersection(
+    //   MemberStates.map((str: string) => str.toLowerCase()),
+    //   this.state.places
+    // );
+    // const newRes: TextAnalyticsStateType = {
+    //   this.state
+    // };
 
-    this.props.results(newRes);
+    this.props.results(this.state);
   }
 
   renderResults = (): JSX.Element => {

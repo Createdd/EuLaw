@@ -35,7 +35,7 @@ class DecisionResultsStep extends React.Component<
           <input
             name="isMemberState"
             type="checkbox"
-            checked={this.state.checked}
+            checked={true}
             onChange={this.handleInputChange}
             disabled={true}
           />
