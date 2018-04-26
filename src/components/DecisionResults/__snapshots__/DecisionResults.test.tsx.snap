@@ -8,19 +8,25 @@ exports[`Test DecisionResults renders snapshot 1`] = `
     Decision Results
   </h2>
   <ul>
-    <li
-      className="sc-bwzfXH bukUYK"
+    <div
+      className="sc-bxivhb bUZGRr"
     >
-      <label>
-        Is not a member state 
-      </label>
-      <input
-        checked={false}
-        disabled={true}
-        name="isMemberState"
-        type="checkbox"
-      />
-    </li>
+      <li
+        className="sc-EHOje jqcrHf"
+      >
+        <label>
+          Is not a 
+          member state
+           
+        </label>
+        <input
+          checked={false}
+          disabled={true}
+          name="member state"
+          type="checkbox"
+        />
+      </li>
+    </div>
   </ul>
 </form>
 `;

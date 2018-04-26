@@ -11,7 +11,7 @@ const testResults = {
 describe( 'Test DecisionResultsStep', () => {
     it( 'renders snapshot', () => {
         const tree = renderer.create(
-            <DecisionResultsStep results={testResults}/>
+            <DecisionResultsStep results={testResults} success={true} type="MS"/>
         ).toJSON();
         
         expect( tree ).toMatchSnapshot();
