@@ -1,20 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test DecisionResults renders snapshot 1`] = `
-<form>
-  <div
-    className="sc-bdVaJa eAwGjB"
-  >
-    <label>
+<form
+  className="sc-htpNat jPtAfx"
+>
+  <h2>
+    Decision Results
+  </h2>
+  <ul>
+    <li
+      className="sc-bwzfXH bukUYK"
+    >
+      <label>
+        Is not a member state 
+      </label>
       <input
         checked={false}
         disabled={true}
         name="isMemberState"
-        onChange={[Function]}
         type="checkbox"
       />
-      is a member state
-    </label>
-  </div>
+    </li>
+  </ul>
 </form>
 `;

@@ -92,7 +92,7 @@ class DecisionResults extends React.Component<
     );
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <StyledForm>
         <h2>Decision Results</h2>

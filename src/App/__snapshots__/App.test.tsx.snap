@@ -30,7 +30,7 @@ exports[`renders the component 1`] = `
     />
   </form>
   <div
-    className="sc-EHOje edRFCv"
+    className="sc-gzVnrw kWMqOl"
   >
     <p>
       TextAnalytics
@@ -50,21 +50,27 @@ exports[`renders the component 1`] = `
       </li>
     </ul>
   </div>
-  <form>
-    <div
-      className="sc-ifAKCX jtdfU"
-    >
-      <label>
+  <form
+    className="sc-bZQynM htJfYJ"
+  >
+    <h2>
+      Decision Results
+    </h2>
+    <ul>
+      <li
+        className="sc-EHOje jqcrHf"
+      >
+        <label>
+          Is not a member state 
+        </label>
         <input
           checked={false}
           disabled={true}
           name="isMemberState"
-          onChange={[Function]}
           type="checkbox"
         />
-        is a member state
-      </label>
-    </div>
+      </li>
+    </ul>
   </form>
   <h2>
     Example Case:

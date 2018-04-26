@@ -79,7 +79,7 @@ class TextAnalytics extends React.Component<
     this.resultsHandler();
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <TextAnalyticsStyled>
         <p>TextAnalytics</p>

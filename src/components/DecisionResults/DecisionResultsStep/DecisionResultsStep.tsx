@@ -28,7 +28,7 @@ class DecisionResultsStep extends React.Component<
     });
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <DecisionResultsStepStyled>
         <label>

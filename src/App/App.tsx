@@ -49,7 +49,7 @@ class App extends React.Component<{}, AppStateType> {
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <AppStyle>
         <HeaderStyle>
