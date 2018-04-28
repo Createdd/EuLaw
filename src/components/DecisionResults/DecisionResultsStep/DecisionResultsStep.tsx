@@ -16,20 +16,6 @@ class DecisionResultsStep extends React.Component<
 > {
   constructor(props: DecisionResultsStepPropsType) {
     super(props);
-    this.state = {
-      checked: false
-    };
-  }
-
-  // copied from React Docs
-  handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
-    // const target = event.target as HTMLInputElement;
-    // const value = target.type === 'checkbox' ? target.checked : target.value;
-    // const name = target.name;
-
-    this.setState({
-      checked: true
-    });
   }
 
   renderResult = ( type: string ): JSX.Element => {
