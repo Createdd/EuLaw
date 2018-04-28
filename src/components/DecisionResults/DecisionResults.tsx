@@ -18,22 +18,46 @@ class DecisionResults extends React.Component<
   }
 
   renderDecisionSteps = (results: TextAnalyticsStateType): JSX.Element => {
-    if (results.places.length !== 0) {
-      const intersect: string[] = _intersection(
-        MemberStates.map((str: string) => str.toLowerCase()),
-        results.places
-      );
-      if (intersect.length > 1) {
-        return (
-          <DecisionResultsStep results={this.props.results} success={true} type="member state"/>
+    const rows: JSX.Element[] = [];
+    for (const item in this.props.results) {
+      // const comparedItem = item === 'places' || item === 'topics';
+      // console.log(item);
+      if (item.length !== 0 && true) {
+        const intersect: string[] = _intersection(
+          MemberStates.map((str: string) => str.toLowerCase()),
+          results.places
         );
-      } else {
-        return (
-          <DecisionResultsStep results={this.props.results} success={false} type="member state"/>
-        );
+        if (intersect.length > 1) {
+          rows.push(
+            <DecisionResultsStep
+              key={item + 'key'}
+              results={this.props.results}
+              success={true}
+              type={item}
+            />
+          );
+          continue;
+        } else {
+          rows.push(
+            <DecisionResultsStep
+              key={item + 'key'}
+              results={this.props.results}
+              success={false}
+              type={item}
+            />
+          );
+          continue;
+        }
       }
+      // return (
+      //   <DecisionResultsStep
+      //     results={this.props.results}
+      //     success={false}
+      //     type="not specified"
+      //   />
+      // );
     }
-    return <DecisionResultsStep results={this.props.results} success={false} type="not specified" />;
+    return <>{rows}</>;
   }
 
   render() {
