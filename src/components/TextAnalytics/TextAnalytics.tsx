@@ -36,11 +36,11 @@ class TextAnalytics extends React.Component<
       <ul>
         <li>
           euTopic:
-          {this.state.euTopic.map((top: string) => `${top.toUpperCase()}, `)}
+          {this.state.euTopic.map((top: string) => ` ${top.toUpperCase()}, `)}
         </li>
         <li>
           States:
-          {this.state.memberState.map((pl: string) => `${pl.toUpperCase()}, `)}
+          {this.state.memberState.map((pl: string) => ` ${pl.toUpperCase()}, `)}
         </li>
       </ul>
     );
