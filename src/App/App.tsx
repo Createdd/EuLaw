@@ -29,7 +29,7 @@ class App extends React.Component<{}, AppStateType> {
     this.state = {
       currentCase: 'Paste example case here',
       results: {
-        topics: [],
+        euTopic: [],
         memberState: []
       }
     };

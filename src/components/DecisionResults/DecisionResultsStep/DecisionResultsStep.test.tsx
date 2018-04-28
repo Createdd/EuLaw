@@ -4,7 +4,7 @@ import * as renderer from 'react-test-renderer';
 import DecisionResultsStep from './DecisionResultsStep';
 
 const testResults = {
-    topics: ['test1', 'test2'],
+    euTopic: ['test1', 'test2'],
     memberState: ['test1', 'test2']
   };
 

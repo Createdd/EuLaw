@@ -37,7 +37,7 @@ exports[`renders the component 1`] = `
     </p>
     <ul>
       <li>
-        Topics:
+        euTopic:
         EU, 
         AUSTRIA, 
         GERMANY, 

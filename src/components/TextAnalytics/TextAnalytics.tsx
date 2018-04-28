@@ -5,7 +5,7 @@ var nlp = require('compromise');
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
 
-import ExampleCase from '../../data/exampleData/exampleCase';
+// import ExampleCase from '../../data/exampleData/exampleCase';
 
 class TextAnalytics extends React.Component<
   TextAnalyticsPropsType,
@@ -14,7 +14,7 @@ class TextAnalytics extends React.Component<
   constructor(props: TextAnalyticsPropsType) {
     super(props);
     this.state = {
-      topics: [],
+      euTopic: [],
       memberState: []
     };
   }
@@ -35,8 +35,8 @@ class TextAnalytics extends React.Component<
     return (
       <ul>
         <li>
-          Topics:
-          {this.state.topics.map((top: string) => `${top.toUpperCase()}, `)}
+          euTopic:
+          {this.state.euTopic.map((top: string) => `${top.toUpperCase()}, `)}
         </li>
         <li>
           States:
@@ -50,9 +50,9 @@ class TextAnalytics extends React.Component<
     nextProps: TextAnalyticsPropsType,
     prevState: TextAnalyticsStateType
   ) {
-    // const text = nlp(nextProps.text); // TODO: Use input instead of example
-    const text = nlp(ExampleCase.text);
-    const topics = text
+    const text = nlp(nextProps.text); // TODO: Use input instead of example
+    // const text = nlp(ExampleCase.text);
+    const euTopic = text
       .topics()
       .slice(0, 4)
       .out('frequency')
@@ -65,9 +65,9 @@ class TextAnalytics extends React.Component<
       .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
     // If a new text is supplied, update the state
-    if (!_isEqual(prevState, { topics, memberState })) {
+    if (!_isEqual(prevState, { euTopic, memberState })) {
       return {
-        topics,
+        euTopic,
         memberState
       };
     }
