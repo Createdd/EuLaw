@@ -16,13 +16,32 @@ exports[`Test DecisionResults renders snapshot 1`] = `
       >
         <label>
           Is not a 
-          member state
+          euTopic
            
         </label>
         <input
           checked={false}
           disabled={true}
-          name="member state"
+          name="euTopic"
+          type="checkbox"
+        />
+      </li>
+    </div>
+    <div
+      className="sc-bxivhb bUZGRr"
+    >
+      <li
+        className="sc-EHOje jqcrHf"
+      >
+        <label>
+          Is not a 
+          memberState
+           
+        </label>
+        <input
+          checked={false}
+          disabled={true}
+          name="memberState"
           type="checkbox"
         />
       </li>
