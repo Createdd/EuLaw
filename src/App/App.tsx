@@ -30,7 +30,7 @@ class App extends React.Component<{}, AppStateType> {
       currentCase: 'Paste example case here',
       results: {
         topics: [],
-        places: []
+        memberState: []
       }
     };
   }

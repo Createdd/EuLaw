@@ -20,12 +20,12 @@ class DecisionResults extends React.Component<
   renderDecisionSteps = (results: TextAnalyticsStateType): JSX.Element => {
     const rows: JSX.Element[] = [];
     for (const item in this.props.results) {
-      const comparedItem = item === 'places'; // || item === 'topics';
+      const comparedItem = item === 'memberState'; // || item === 'topics';
       // console.log(item);
       if (item.length !== 0 && comparedItem) {
         const intersect: string[] = _intersection(
           MemberStates.map((str: string) => str.toLowerCase()),
-          results.places
+          results.memberState
         );
         if (intersect.length > 1) {
           rows.push(

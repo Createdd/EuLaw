@@ -5,7 +5,7 @@ import DecisionResultsStep from './DecisionResultsStep';
 
 const testResults = {
     topics: ['test1', 'test2'],
-    places: ['test1', 'test2']
+    memberState: ['test1', 'test2']
   };
 
 describe( 'Test DecisionResultsStep', () => {

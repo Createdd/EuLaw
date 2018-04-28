@@ -15,14 +15,14 @@ class TextAnalytics extends React.Component<
     super(props);
     this.state = {
       topics: [],
-      places: []
+      memberState: []
     };
   }
 
   resultsHandler = (): void => {
     // const intersect: string[] = _intersection(
     //   MemberStates.map((str: string) => str.toLowerCase()),
-    //   this.state.places
+    //   this.state.memberState
     // );
     // const newRes: TextAnalyticsStateType = {
     //   this.state
@@ -40,7 +40,7 @@ class TextAnalytics extends React.Component<
         </li>
         <li>
           States:
-          {this.state.places.map((pl: string) => `${pl.toUpperCase()}, `)}
+          {this.state.memberState.map((pl: string) => `${pl.toUpperCase()}, `)}
         </li>
       </ul>
     );
@@ -57,7 +57,7 @@ class TextAnalytics extends React.Component<
       .slice(0, 4)
       .out('frequency')
       .map((top: { normal: string }) => top.normal.toLowerCase());
-    const places = text
+    const memberState = text
       .nouns()
       .places()
       .slice(0, 4)
@@ -65,10 +65,10 @@ class TextAnalytics extends React.Component<
       .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
     // If a new text is supplied, update the state
-    if (!_isEqual(prevState, { topics, places })) {
+    if (!_isEqual(prevState, { topics, memberState })) {
       return {
         topics,
-        places
+        memberState
       };
     }
 
