@@ -25,7 +25,7 @@ class DecisionResults extends React.Component<
           MemberStates.map((str: string) => str.toLowerCase()),
           results.memberState
         );
-        if (intersect.length > 1) {
+        if (intersect.length > 0) {
           rows.push(
             <DecisionResultsStep
               key={item + 'key'}
