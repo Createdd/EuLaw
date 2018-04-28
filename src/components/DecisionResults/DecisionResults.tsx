@@ -17,7 +17,17 @@ class DecisionResults extends React.Component<
     super(props);
   }
 
-  // TODO: DRY principle for rendering!
+  addRow = (rows: JSX.Element[], item: string, success: boolean) => {
+    rows.push(
+      <DecisionResultsStep
+        key={`${item}key`}
+        results={this.props.results}
+        success={success}
+        type={item}
+      />
+    );
+  }
+
   renderDecisionSteps = (results: TextAnalyticsStateType): JSX.Element => {
     const rows: JSX.Element[] = [];
     for (const item in this.props.results) {
@@ -27,58 +37,20 @@ class DecisionResults extends React.Component<
           results.memberState
         );
         if (intersect.length > 0) {
-          rows.push(
-            <DecisionResultsStep
-              key={item + 'key'}
-              results={this.props.results}
-              success={true}
-              type={item}
-            />
-          );
+          this.addRow(rows, item, true);
           continue;
         } else {
-          rows.push(
-            <DecisionResultsStep
-              key={item + 'key'}
-              results={this.props.results}
-              success={false}
-              type={item}
-            />
-          );
+          this.addRow(rows, item, false);
           continue;
         }
       } else if (item.length !== 0 && item === 'euTopic') {
         if (_includes(results.euTopic, 'eu')) {
-          rows.push(
-            <DecisionResultsStep
-              key={item + 'key'}
-              results={this.props.results}
-              success={true}
-              type={item}
-            />
-          );
+          this.addRow(rows, item, true);
           continue;
         } else {
-          rows.push(
-            <DecisionResultsStep
-              key={item + 'key'}
-              results={this.props.results}
-              success={false}
-              type={item}
-            />
-          );
+          this.addRow(rows, item, false);
           continue;
         }
-      } else {
-        rows.push(
-          <DecisionResultsStep
-            key={item + 'key'}
-            results={this.props.results}
-            success={false}
-            type={item}
-          />
-        );
-        continue;
       }
     }
     return <>{rows}</>;
