@@ -2,17 +2,21 @@
 
 exports[`Test DecisionResultsStep renders snapshot 1`] = `
 <div
-  className="sc-bdVaJa eAwGjB"
+  className="sc-bdVaJa bDWFJH"
 >
-  <label>
+  <li
+    className="sc-bwzfXH kuSbvP"
+  >
+    <label>
+      Is a 
+      MS
+    </label>
     <input
-      checked={false}
+      checked={true}
       disabled={true}
-      name="isMemberState"
-      onChange={[Function]}
+      name="MS"
       type="checkbox"
     />
-    is a member state
-  </label>
+  </li>
 </div>
 `;

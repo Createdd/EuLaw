@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
+const StyledDecisionStepSuccess = styled.li`
+  color: green;
+`;
+
+const StyledDecisionStepFail = styled.li`
+  color: red;
+`;
+
 const StyledForm = styled.form`
-  color: blue;
-  /* background-color: lightyellow;*/
-  > textarea {
-    width: 20rem;
-    height: 20rem;
-    border: 3px solid blue;
+  border: 0.1rem solid black;
+
+  ul {
+    list-style-type: none;
   }
 `;
 
-export { StyledForm };
+export { StyledForm, StyledDecisionStepSuccess, StyledDecisionStepFail };

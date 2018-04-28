@@ -9,16 +9,10 @@ exports[`Test TextAnalytics renders snapshot 1`] = `
   </p>
   <ul>
     <li>
-      Topics:
-      EU, 
-      AUSTRIA, 
-      GERMANY, 
-      AUSTRIAN GOVERNMENT, 
+      euTopic:
     </li>
     <li>
       States:
-      GERMANY, 
-      AUSTRIA, 
     </li>
   </ul>
 </div>

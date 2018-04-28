@@ -30,41 +30,66 @@ exports[`renders the component 1`] = `
     />
   </form>
   <div
-    className="sc-EHOje edRFCv"
+    className="sc-iwsKbI hCQoxc"
   >
     <p>
       TextAnalytics
     </p>
     <ul>
       <li>
-        Topics:
-        EU, 
-        AUSTRIA, 
-        GERMANY, 
-        AUSTRIAN GOVERNMENT, 
+        euTopic:
       </li>
       <li>
         States:
-        GERMANY, 
-        AUSTRIA, 
       </li>
     </ul>
   </div>
-  <form>
-    <div
-      className="sc-ifAKCX jtdfU"
-    >
-      <label>
-        <input
-          checked={false}
-          disabled={true}
-          name="isMemberState"
-          onChange={[Function]}
-          type="checkbox"
-        />
-        is a member state
-      </label>
-    </div>
+  <form
+    className="sc-bZQynM htJfYJ"
+  >
+    <h2>
+      Decision Results
+    </h2>
+    <ul>
+      <div
+        className="sc-gzVnrw ibZhkv"
+      >
+        <li
+          className="sc-dnqmqq jUars"
+        >
+          <label>
+            Is not a 
+            euTopic
+             
+          </label>
+          <input
+            checked={false}
+            disabled={true}
+            name="euTopic"
+            type="checkbox"
+          />
+        </li>
+      </div>
+      <div
+        className="sc-gzVnrw ibZhkv"
+      >
+        <li
+          className="sc-dnqmqq jUars"
+        >
+          <label>
+            Is not a 
+            memberState
+             
+          </label>
+          <input
+            checked={false}
+            disabled={true}
+            name="memberState"
+            type="checkbox"
+          />
+        </li>
+      </div>
+    </ul>
   </form>
   <h2>
     Example Case:

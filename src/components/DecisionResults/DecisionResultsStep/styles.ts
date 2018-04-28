@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
-const DecisionResultsStepStyled = styled.div`
+const DecisionResultsStepStyled = styled.div``;
 
+const StyledDecisionStepSuccess = styled.li`
+  color: green;
 `;
 
-export { DecisionResultsStepStyled as default };
+const StyledDecisionStepFail = styled.li`
+  color: red;
+`;
+
+export {
+  DecisionResultsStepStyled,
+  StyledDecisionStepSuccess,
+  StyledDecisionStepFail
+};

@@ -29,8 +29,8 @@ class App extends React.Component<{}, AppStateType> {
     this.state = {
       currentCase: 'Paste example case here',
       results: {
-        topics: [],
-        places: []
+        euTopic: [],
+        memberState: []
       }
     };
   }
@@ -49,7 +49,7 @@ class App extends React.Component<{}, AppStateType> {
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <AppStyle>
         <HeaderStyle>

@@ -4,8 +4,8 @@ import * as renderer from 'react-test-renderer';
 import { DecisionResults } from './DecisionResults';
 
 const testResults = {
-  topics: ['test1', 'test2'],
-  places: ['test1', 'test2']
+  euTopic: ['test1', 'test2'],
+  memberState: ['test1', 'test2']
 };
 
 describe('Test DecisionResults', () => {

@@ -4,8 +4,8 @@ interface TextAnalyticsPropsType {
 }
 
 interface TextAnalyticsStateType {
-    topics: string[];
-    places: string[];
+    euTopic: string[];
+    memberState: string[];
 }
 
 export {

@@ -34,7 +34,7 @@ class TextField extends React.Component<
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <StyledForm onSubmit={this.handleSubmit}>
         <textarea
