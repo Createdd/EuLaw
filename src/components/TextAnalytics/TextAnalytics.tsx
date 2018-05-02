@@ -63,6 +63,15 @@ class TextAnalytics extends React.Component<
       .slice(0, 4)
       .out('frequency')
       .map((pl: { normal: string }) => pl.normal.toLowerCase());
+    const product = text
+      .match('import ban for any? #Noun from')
+      .terms()
+      .nouns()
+      .tag('possesive')
+      .out('array')
+      .splice(-1);
+
+    console.log(product);
 
     // If a new text is supplied, update the state
     if (!_isEqual(prevState, { euTopic, memberState })) {
