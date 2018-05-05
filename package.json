@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://createdd.github.io/EuLaw",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.10.3",
     "compromise": "^11.6.0",
     "gh-pages": "^1.1.0",
     "lodash": "^4.17.5",
