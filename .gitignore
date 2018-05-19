@@ -22,5 +22,19 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# tensorflowJS
 /converterForTfJs
 /model
+
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+pythonBackend/.Python
+pythonBackend/[Bb]in
+pythonBackend/[Ii]nclude
+pythonBackend/[Ll]ib
+pythonBackend/[Ll]ib64
+pythonBackend/[Ll]ocal
+pythonBackend/[Ss]cripts
+pythonBackend/pyvenv.cfg
+pythonBackend/.venv
+pythonBackend/pip-selfcheck.json
