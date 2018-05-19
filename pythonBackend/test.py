@@ -1,13 +1,25 @@
-# import tensorflow
 import tensorflow as tf
+import numpy as np
+import math
+import matplotlib  
+matplotlib.use('TkAgg')   
+import matplotlib.pyplot as plt  
+import matplotlib.animation as animation
 
-sess = tf.Session()
 
-# Verify we can print a String
-hello = tf.constant("Hello Tensorflow")
-print(sess.run(hello))
+# Generate some house sizes between 1000 and 3500 (typical sq ft of houses)
+num_house = 160
+np.random.seed(42)
+house_size = np.random.randint(low=1000, high=3500, size=num_house)
 
-# Perform some simple math
-a = tf.constant(20)
-b = tf.constant(22)
-print('a + b = {0}'.format(sess.run(a + b)))
+
+# Generate house prices from the sizes with a random noise added
+np.random.seed(42)
+house_price = house_size * 100.0 + np.random.randint(low=20000, high=70000, size=num_house)
+
+
+# Plot generated hours and size
+plt.plot(house_size, house_price, "bx") # bx = blue x
+plt.ylabel("Price")
+plt.xlabel("Size")
+plt.show()
