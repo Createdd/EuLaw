@@ -21,4 +21,10 @@
     "python.formatting.blackPath": "black",
     "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
     "autoDocstring.docstringFormat": "google",
+    "search.exclude": {
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/build": true,
+      "**/.venv": true
+  },
 }

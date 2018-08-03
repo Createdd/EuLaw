@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { isEqual as _isEqual } from 'lodash';
-var nlp = require('compromise');
+// import { isEqual as _isEqual } from 'lodash';
 
 import { TextAnalyticsPropsType, TextAnalyticsStateType } from './types';
 import TextAnalyticsStyled from './styles';
@@ -46,34 +45,34 @@ class TextAnalytics extends React.Component<
     );
   }
 
-  static getDerivedStateFromProps(
-    nextProps: TextAnalyticsPropsType,
-    prevState: TextAnalyticsStateType
-  ) {
-    const text = nlp(nextProps.text); // TODO: Use input instead of example
-    // const text = nlp(ExampleCase.text);
-    const euTopic = text
-      .topics()
-      .slice(0, 4)
-      .out('frequency')
-      .map((top: { normal: string }) => top.normal.toLowerCase());
-    const memberState = text
-      .nouns()
-      .places()
-      .slice(0, 4)
-      .out('frequency')
-      .map((pl: { normal: string }) => pl.normal.toLowerCase());
+  // static getDerivedStateFromProps(
+  //   nextProps: TextAnalyticsPropsType,
+  //   prevState: TextAnalyticsStateType
+  // ) {
+  //   const text = nlp(nextProps.text); // TODO: Use input instead of example
+  //   // const text = nlp(ExampleCase.text);
+  //   const euTopic = text
+  //     .topics()
+  //     .slice(0, 4)
+  //     .out('frequency')
+  //     .map((top: { normal: string }) => top.normal.toLowerCase());
+  //   const memberState = text
+  //     .nouns()
+  //     .places()
+  //     .slice(0, 4)
+  //     .out('frequency')
+  //     .map((pl: { normal: string }) => pl.normal.toLowerCase());
 
-    // If a new text is supplied, update the state
-    if (!_isEqual(prevState, { euTopic, memberState })) {
-      return {
-        euTopic,
-        memberState
-      };
-    }
+  //   // If a new text is supplied, update the state
+  //   if (!_isEqual(prevState, { euTopic, memberState })) {
+  //     return {
+  //       euTopic,
+  //       memberState
+  //     };
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 
   componentDidUpdate(): void {
     this.resultsHandler();
@@ -83,7 +82,6 @@ class TextAnalytics extends React.Component<
     return (
       <TextAnalyticsStyled>
         <p>TextAnalytics</p>
-        {this.renderResults()}
       </TextAnalyticsStyled>
     );
   }
