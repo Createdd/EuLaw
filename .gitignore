@@ -38,3 +38,6 @@ pythonBackend/[Ss]cripts
 pythonBackend/pyvenv.cfg
 pythonBackend/.venv
 pythonBackend/pip-selfcheck.json
+
+# tempaltes 
+pythonBackend/housePricingExample.py
