@@ -7,13 +7,5 @@ exports[`Test TextAnalytics renders snapshot 1`] = `
   <p>
     TextAnalytics
   </p>
-  <ul>
-    <li>
-      euTopic:
-    </li>
-    <li>
-      States:
-    </li>
-  </ul>
 </div>
 `;

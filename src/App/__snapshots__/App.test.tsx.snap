@@ -35,14 +35,6 @@ exports[`renders the component 1`] = `
     <p>
       TextAnalytics
     </p>
-    <ul>
-      <li>
-        euTopic:
-      </li>
-      <li>
-        States:
-      </li>
-    </ul>
   </div>
   <form
     className="sc-bZQynM htJfYJ"
