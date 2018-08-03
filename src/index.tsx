@@ -3,10 +3,6 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import model from './helpers/tensorFlowCalculations';
-
-model();
-
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement
